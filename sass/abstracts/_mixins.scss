@@ -1,0 +1,43 @@
+@mixin respond($breakpoint) {
+  // 700px WIDTH + 600 HEIGHT Breakpoint -- for mobile
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 43.75em) and (min-height: 37.5em) {
+      @content;
+    }
+    // 460px HEIGHT Breakpoint -- for mobile landscape
+  } @else if $breakpoint == mobile-land {
+    @media only screen and (max-height: 28.75em) {
+      @content;
+    }
+    // 900px WIDTH + 400px HEIGHT Breakpoint -- for mobile height adjustments
+  } @else if $breakpoint == between {
+    @media only screen and (max-height: 25em) and (max-width: 56.25em) {
+      @content;
+    }
+    // 900px WIDTH Breakpoint -- for landscape tablets
+  } @else if $breakpoint == tab-portrait {
+    @media only screen and (max-width: 57.5em) {
+      @content;
+    }
+    // 1100px WIDTH Breakpoint -- for landscape tablets
+  } @else if $breakpoint == tab-land {
+    @media only screen and (max-width: 68.75em) {
+      @content;
+    }
+    // 1400px WIDTH Breakpoint -- for laptop
+  } @else if $breakpoint == laptop {
+    @media only screen and (max-width: 87.5em) {
+      @content;
+    }
+    // 1500px WIDTH for carousel Breakpoint -- for wide view
+  } @else if $breakpoint == FHD {
+    @media only screen and (max-width: 93.75em) {
+      @content;
+    }
+    // 1500px WIDTH for carousel Breakpoint -- for wide view
+  } @else if $breakpoint == min-FHD {
+    @media only screen and (min-width: 93.75em) {
+      @content;
+    }
+  }
+}

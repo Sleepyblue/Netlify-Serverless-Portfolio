@@ -1,0 +1,297 @@
+@import '../abstracts/mixins';
+
+.page__contact {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-delay: 2s;
+  overflow: hidden;
+  pointer-events: all;
+
+  @include respond(tab-portrait) {
+    flex-direction: column;
+  }
+
+  @include respond(mobile-land) {
+    flex-direction: row;
+  }
+}
+
+.contact {
+  &__section {
+    position: relative;
+    width: calc(100% / 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(tab-portrait) {
+      width: 100%;
+      height: calc(100% / 3);
+    }
+
+    @include respond(mobile-land) {
+      width: calc(100% / 3);
+      height: initial;
+    }
+  }
+
+  &__square {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    transition: all 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transform: rotate(-45deg);
+    cursor: pointer;
+    z-index: 1;
+
+    @include respond(tab-portrait) {
+      width: 20%;
+    }
+
+    @include respond(mobile) {
+      width: 25%;
+    }
+
+    @include respond(mobile-land) {
+      width: 25%;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      background-color: var(--primary);
+      transition: all 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      box-shadow: inset 0px 0px 5px rgba(var(--shadow-rgb), 0.4);
+
+      @include respond(mobile-land) {
+        border-radius: 13px;
+      }
+    }
+
+    & ion-icon {
+      width: 60%;
+      height: 60%;
+      color: var(--bg);
+      transition: all 0.6s var(--cubic-2);
+      transform: rotate(45deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &:hover {
+      &::after {
+        background-color: var(--acc1);
+      }
+
+      ion-icon {
+        color: var(--acc2);
+      }
+
+      @include respond(tab-land) {
+        &::after {
+          background-color: var(--primary);
+        }
+
+        ion-icon {
+          color: var(--bg);
+        }
+      }
+    }
+
+    &:active {
+      &::after {
+        background-color: var(--acc1);
+      }
+
+      ion-icon {
+        color: var(--acc2);
+      }
+    }
+  }
+
+  &__holder {
+    position: absolute;
+    width: 10%;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    border-radius: 7rem;
+    background-color: var(--primary);
+    color: var(--acc1);
+    text-decoration: none;
+    transition: all 0.2s 0.2s var(--cubic-1);
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0px 0px 5px rgba(var(--shadow-rgb), 0.4);
+    cursor: pointer;
+    z-index: 0;
+    white-space: nowrap;
+
+    &-icon {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & ion-icon {
+        width: 2rem;
+        height: 2rem;
+        color: var(--bg);
+        transition: all 0.2s 0.2s var(--cubic-1);
+
+        @include respond(mobile-land) {
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+      }
+    }
+
+    &-text {
+      width: 70%;
+      height: 100%;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--bg);
+      transition: all 0.2s 0.2s var(--cubic-1);
+      pointer-events: none;
+
+      @include respond(mobile-land) {
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-color: var(--acc1);
+
+      .contact__holder {
+        &-icon ion-icon {
+          color: var(--acc2);
+        }
+
+        &-text {
+          color: var(--acc2);
+        }
+
+        &::before {
+          color: var(--acc2);
+        }
+      }
+    }
+
+    &:hover {
+      @include respond(tab-land) {
+        background-color: var(--primary);
+
+        .contact__holder {
+          &-icon ion-icon {
+            color: var(--bg);
+          }
+
+          &-text {
+            color: var(--bg);
+          }
+
+          &::before {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+
+    &:active {
+      box-shadow: inset 0px 0px 6px rgba(var(--shadow-rgb), 0.6);
+    }
+  }
+}
+
+.contact__section[data-contact='mail'] {
+  .contact__holder::before {
+    content: 'brunomig47@gmail.com';
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    width: 0%;
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--primary);
+    transition: all 0.2s 0.2s var(--cubic-1);
+    transform: translate(-50%, 50%);
+    overflow: hidden;
+
+    @include respond(mobile) {
+      font-size: 1.2rem;
+    }
+
+    @include respond(mobile-land) {
+      font-size: 1rem;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+// Contact Page Utilities
+///////////////////////////////////////////////////////////
+
+.contact__section.move {
+  .contact__square {
+    transform: translateY(-100px) rotate(-45deg);
+
+    @include respond(tab-portrait) {
+      transform: translateY(0px) translateX(-200px) rotate(-45deg);
+    }
+
+    @include respond(mobile) {
+      transform: translateY(0px) translateX(-100px) rotate(-45deg);
+    }
+
+    @include respond(mobile-land) {
+      transform: translateY(-50px) rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(-135deg);
+    }
+
+    & ~ .contact__holder {
+      width: 60%;
+      transition: all 0.8s var(--cubic-1);
+      transform: translate(-50%, 350%);
+
+      @include respond(tab-land) {
+        transform: translate(-50%, 250%);
+      }
+
+      @include respond(tab-portrait) {
+        width: 40%;
+        transform: translate(0%, -50%);
+      }
+
+      @include respond(mobile-land) {
+        width: 60%;
+        transform: translate(-50%, 75%);
+      }
+    }
+  }
+
+  .contact__holder::before {
+    width: 100%;
+    transition: all 0.3s 0.5s var(--cubic-1);
+  }
+}

@@ -1,0 +1,448 @@
+@import '../abstracts/mixins';
+
+.btn {
+  max-width: 18rem;
+  width: 100%;
+  max-height: 9rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  z-index: 2;
+  padding: 0.8rem;
+  cursor: pointer;
+  background: var(--primary);
+  border-radius: 4.5rem;
+  box-shadow: inset 0px 0px 2px rgba(var(--shadow-rgb), 0.7);
+  transition: all 0.2s cubic-bezier(0.54, 0.03, 0, 1.66);
+
+  @include respond(tab-portrait) {
+    flex-shrink: 0;
+  }
+
+  @include respond(laptop) {
+    max-width: 14.4rem;
+    max-height: 7.2rem;
+  }
+
+  @include respond(mobile) {
+    flex-shrink: initial;
+    position: relative;
+    max-width: 49.9%;
+    width: 49.9%;
+    max-height: 11rem;
+    height: 110rem;
+    display: flex;
+    place-items: flex-end;
+    justify-content: center;
+    border-radius: 0;
+    box-shadow: inset 0px 0px 3px rgba(var(--shadow-rgb), 0.75);
+    padding-bottom: 2rem;
+  }
+
+  @include respond(mobile-land) {
+    flex-shrink: initial;
+    position: relative;
+    max-width: 49.9%;
+    width: 49.9%;
+    max-height: 11rem;
+    height: 110rem;
+    display: flex;
+    place-items: flex-end;
+    justify-content: center;
+    border-radius: 0;
+    box-shadow: inset 0px 0px 3px rgba(var(--shadow-rgb), 0.75);
+    padding-bottom: 2rem;
+  }
+
+  &__container {
+    transition: all 0.3s cubic-bezier(0.54, 0.03, 0, 1.66);
+    pointer-events: none;
+
+    @include respond(mobile) {
+      position: absolute;
+      bottom: 0;
+    }
+
+    @include respond(mobile-land) {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  & ion-icon {
+    width: 6rem;
+    height: 6rem;
+    fill: var(--acc1);
+    pointer-events: none;
+
+    @include respond(mobile) {
+      width: 3.75rem;
+      height: 3.75rem;
+      transform: translateY(-2px) rotate(90deg);
+    }
+
+    @include respond(mobile-land) {
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+  }
+
+  &:hover {
+    background-color: var(--acc1);
+    box-shadow: inset 0px 0px 5px rgba(var(--shadow-rgb), 0.7);
+
+    & ion-icon {
+      fill: var(--acc2);
+    }
+
+    @include respond(tab-land) {
+      background-color: var(--primary);
+
+      & ion-icon {
+        fill: var(--acc1);
+      }
+    }
+  }
+
+  &:active {
+    background-color: var(--acc1);
+
+    & ion-icon {
+      fill: var(--acc2);
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+
+    @include respond(tab-land) {
+      animation: none;
+      border: none;
+      background-color: var(--acc1);
+      box-shadow: inset 0px 0px 8px rgba(var(--shadow-rgb), 1);
+
+      & ion-icon {
+        fill: var(--acc2);
+        width: 5.6rem;
+        height: 5.6rem;
+      }
+    }
+
+    @include respond(mobile) {
+      & .btn__container {
+        transform: translateY(-10%);
+      }
+
+      & ion-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+    }
+
+    @include respond(mobile-land) {
+      & .btn__container {
+        transform: translateY(-10%);
+      }
+
+      & ion-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+    }
+  }
+}
+
+#rarr {
+  @include respond(mobile) {
+    position: initial;
+    top: unset;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 6.5rem 0px;
+    transform: translate(0%, 0%);
+  }
+
+  @include respond(mobile-land) {
+    position: initial;
+    top: unset;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 6.5rem 0px;
+    transform: translate(0%, 0%);
+  }
+
+  &:active {
+    box-shadow: inset -2px 0px 8px rgba(var(--shadow-rgb), 0.7);
+
+    & .btn__container {
+      transform: translateX(10%);
+    }
+
+    @include respond(mobile) {
+      box-shadow: inset 0px -2px 3px rgba(var(--shadow-rgb), 0.75);
+
+      & .btn__container {
+        transform: translateY(5%);
+      }
+    }
+
+    @include respond(mobile-land) {
+      box-shadow: inset -2px 0px 3px rgba(var(--shadow-rgb), 0.75);
+
+      & .btn__container {
+        transform: translateX(10%);
+      }
+    }
+  }
+}
+
+#larr {
+  @include respond(mobile) {
+    position: initial;
+    top: unset;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 0 6.5rem;
+    transform: translate(0%, 0%);
+  }
+
+  @include respond(mobile-land) {
+    position: initial;
+    top: unset;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 0 6.5rem;
+    transform: translate(0%, 0%);
+  }
+
+  &:active {
+    box-shadow: inset 2px 0px 8px rgba(var(--shadow-rgb), 0.7);
+
+    & .btn__container {
+      transform: translateX(-10%);
+    }
+
+    @include respond(mobile) {
+      box-shadow: inset 0px -2px 3px rgba(var(--shadow-rgb), 0.75);
+
+      & .btn__container {
+        transform: translateY(-10%);
+      }
+    }
+
+    @include respond(mobile-land) {
+      box-shadow: inset 2px 0px 3px rgba(var(--shadow-rgb), 0.75);
+
+      & .btn__container {
+        transform: translateX(-10%);
+      }
+    }
+  }
+}
+
+.btn__carousel {
+  display: flex;
+  place-items: center;
+  justify-content: space-around;
+  position: relative;
+  width: 40%;
+  height: 60%;
+  opacity: 1;
+  transition: all 0.6s cubic-bezier(0.04, 1.44, 0.83, 1.17);
+
+  @include respond(tab-portrait) {
+    gap: 20%;
+  }
+
+  @include respond(mobile) {
+    gap: initial;
+  }
+
+  @include respond(mobile-land) {
+    gap: initial;
+  }
+
+  @include respond(mobile) {
+    width: 94%;
+    height: 100%;
+    place-items: flex-start;
+    margin-top: -16rem;
+    pointer-events: all;
+  }
+
+  @include respond(mobile-land) {
+    position: absolute;
+    width: 94%;
+    height: 60%;
+    margin-top: -8rem;
+  }
+}
+
+.btn__mobile-navigation {
+  display: none;
+  position: absolute;
+  bottom: 5.5%;
+  left: 0;
+  max-width: 15rem;
+  width: 100%;
+  max-height: 7rem;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--bg);
+  border: none;
+  border-radius: 25px;
+  box-shadow: inset 0px 0px 5px rgba(var(--shadow-rgb), 0.4);
+  transition: all 0.6s cubic-bezier(0.04, 1.44, 0.83, 1.17);
+  transform: translate(-50%, 50%);
+  pointer-events: all;
+
+  @include respond(mobile) {
+    display: flex;
+  }
+
+  &--icon {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    color: var(--acc2);
+    z-index: 1;
+    transition: all 0.6s cubic-bezier(0.04, 1.44, 0.83, 1.17);
+    pointer-events: none;
+  }
+
+  &:active {
+    box-shadow: inset -2px 0px 5px rgba(var(--shadow-rgb), 0.4);
+  }
+
+  &:active .btn__mobile-navigation--icon {
+    transform: translateX(4px);
+    color: var(--primary);
+  }
+}
+
+.btn__github {
+  display: none;
+  position: absolute;
+  top: calc((100vh * 0.15) / 2);
+  right: 0;
+  max-width: 16rem;
+  width: 100%;
+  max-height: 8rem;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--bg);
+  border: none;
+  border-radius: 25px;
+  box-shadow: inset 0px 0px 5px rgba(var(--shadow-rgb), 0.4);
+  transition: all 0.6s cubic-bezier(0.04, 1.44, 0.83, 1.17);
+  transform: translate(50%, -50%);
+  pointer-events: all;
+  cursor: pointer;
+
+  @include respond(laptop) {
+    display: flex;
+    transition: all 0.2s linear;
+  }
+
+  @include respond(tab-land) {
+    transition: all 0.6s cubic-bezier(0.04, 1.44, 0.83, 1.17);
+  }
+
+  @include respond(mobile) {
+    top: unset;
+    bottom: 5.5%;
+    max-width: 15rem;
+    max-height: 7rem;
+    transform: translate(50%, 50%);
+  }
+
+  @include respond(mobile-land) {
+    top: 10%;
+    max-width: 14rem;
+    max-height: 6rem;
+  }
+
+  &-icon {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    fill: var(--acc2);
+    z-index: 1;
+    transition: all 0.6s cubic-bezier(0.04, 1.44, 0.83, 1.17);
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: var(--acc1);
+
+    @include respond(tab-land) {
+      background-color: unset;
+    }
+  }
+
+  &:active {
+    box-shadow: inset 2px 0px 5px rgba(var(--shadow-rgb), 0.4);
+  }
+
+  &:active .btn__github-icon {
+    transform: translateX(-4px);
+    fill: var(--primary);
+  }
+}
+
+.btn__aside-close {
+  display: none;
+
+  @include respond(laptop) {
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 14.4rem;
+    width: 100%;
+    max-height: 5.4rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    background: var(--acc1);
+    border-radius: 4.5rem;
+    transition: all 0.3s cubic-bezier(0.54, 0.03, 0, 1.66);
+    box-shadow: inset 0px 0px 5px rgba(var(--shadow-rgb), 0.7);
+
+    @include respond(mobile-land) {
+      max-width: 10.8rem;
+      max-height: 4.05rem;
+      position: relative;
+      margin-left: 2.5%;
+      top: unset;
+      left: unset;
+      transform: unset;
+    }
+
+    &--icon {
+      width: 120%;
+      height: 120%;
+      transform: rotate(90deg);
+      fill: var(--acc2);
+      transition: all 0.3s cubic-bezier(0.54, 0.03, 0, 1.66);
+      pointer-events: none;
+    }
+
+    &:active {
+      background-color: var(--acc2);
+      box-shadow: inset -2px 0px 5px rgba(var(--shadow-rgb), 0.7);
+
+      & .btn__aside-close--icon {
+        fill: var(--acc1);
+        transform: translateX(10%) rotate(90deg);
+      }
+    }
+  }
+}

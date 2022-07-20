@@ -1,0 +1,13 @@
+@import '../abstracts/mixins';
+
+.page__projects {
+  grid-template-rows: 0.15fr 0.7fr 0.15fr;
+  position: relative;
+  width: 100%;
+  height: auto;
+  transition-delay: 2s;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}

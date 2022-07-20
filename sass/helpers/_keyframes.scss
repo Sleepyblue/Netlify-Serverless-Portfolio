@@ -1,0 +1,142 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+@keyframes trans {
+  0% {
+    height: 0%;
+  }
+
+  10% {
+    height: 50%;
+  }
+
+  50% {
+    height: 50%;
+  }
+
+  70% {
+    height: 50%;
+  }
+}
+
+@keyframes moveLeft {
+  10% {
+    right: 47%;
+  }
+}
+@keyframes moveRight {
+  10% {
+    right: 33%;
+  }
+}
+
+@keyframes moveDown {
+  10% {
+    top: 45%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: transparent;
+    transform: scale(0.8);
+    box-shadow: none;
+  }
+
+  100% {
+    background-color: var(--acc2);
+    transform: scale(1);
+    box-shadow: 2px 2px 6px 0px rgba(var(--shadow-rgb), 0.75);
+  }
+}
+
+@keyframes jiggle {
+  0% {
+    transform: translateY(0);
+  }
+
+  80% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+// LOADERS
+
+@keyframes moveBubblesTop {
+  70% {
+    top: var(--totop);
+    transform: rotate(480deg);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    top: -30%;
+    transform: rotate(120deg);
+    opacity: 0;
+  }
+}
+
+@keyframes moveBubblesBot {
+  70% {
+    bottom: var(--tobot);
+    transform: rotate(480deg);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    bottom: -30%;
+    transform: rotate(120deg);
+    opacity: 0;
+  }
+}
+
+@keyframes loaderShow {
+  10% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: visible;
+  }
+
+  95% {
+    visibility: hidden;
+  }
+}
+
+@keyframes hoverScale {
+  0% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+// Slides Arrow Animation on hover
+@keyframes arrowUp {
+  100% {
+    transform: translateY(-20%);
+  }
+}
+
+@include respond(min-FHD) {
+  @keyframes arrowUp {
+    100% {
+      transform: translateY(-15%);
+    }
+  }
+}

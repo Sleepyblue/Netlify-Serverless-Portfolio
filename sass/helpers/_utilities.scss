@@ -1,0 +1,92 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+///////////////////////////////////////////////////////////
+// :: ALL :: NAVIGATION BUTTONS utility classes
+.nav__link.select {
+  background-color: var(--acc1);
+  border: 1px solid var(--acc1);
+  box-shadow: inset 0px 0px 4px rgba(var(--shadow-rgb), 1);
+
+  .nav__link-icon {
+    fill: var(--acc2);
+    width: 4.8rem;
+    height: 4.8rem;
+
+    @include respond(mobile) {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+
+    @include respond(mobile-land) {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+  }
+}
+
+.nav__link--noclick {
+  pointer-events: none;
+}
+
+///////////////////////////////////////////////////////////
+// :: ALL :: SECTION TRANSITION utility classes
+
+.page--show {
+  width: 100%;
+}
+
+.page--hide {
+  width: 0%;
+}
+
+///////////////////////////////////////////////////////////
+// :: ALL :: LOADER utility classes
+
+.loader--transition {
+  animation: trans 3s linear;
+}
+
+.loader--show {
+  animation: loaderShow 2s 0.21s linear forwards;
+}
+
+.loader--bubbles-top {
+  animation: moveBubblesTop 3s ease forwards;
+}
+
+.loader--bubbles-bot {
+  animation: moveBubblesBot 3s ease forwards;
+}
+
+///////////////////////////////////////////////////////////
+// :: MOBILE :: MODAL utility classes
+
+.mid__modal.open {
+  transform: translateY(0%);
+  opacity: 1;
+  pointer-events: all;
+}
+
+///////////////////////////////////////////////////////////
+// :: ASIDE :: Aside sections transform
+
+.display__goo-box {
+  display: none;
+}
+
+.rotate__goo-down {
+  transform: translate(-50%, 100%) rotate(180deg);
+}
+
+.bottom__goo-down {
+  top: 104.5%;
+}
+
+.goo-fill--down {
+  fill: var(--primary);
+}
+
+.blackout.active {
+  display: block;
+}
