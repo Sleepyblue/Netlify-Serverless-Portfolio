@@ -301,7 +301,7 @@ const stateInit = function () {
 };
 
 const stateDefault = function () {
-  console.log('Running Initializer');
+  // console.log('Running Initializer');
 
   themeStateControl(true);
   navigationLinkControl(undefined, undefined, true);
@@ -314,7 +314,7 @@ const stateDefault = function () {
 };
 
 const stateHandler = function (reload = undefined) {
-  console.log('Running Handler');
+  // console.log('Running Handler');
   state = JSON.parse(localStorage.getItem('state'));
 
   themeStateControl();
@@ -929,7 +929,6 @@ const openModal = function (e) {
   createModal(e);
   modal.classList.add('open');
   modalState = true;
-  console.log('called');
 };
 
 const closeModal = function () {
@@ -974,8 +973,6 @@ const contributionGraph = async function (e) {
   const dataStream = await fetch(url);
   const dataPromise = dataStream.json();
   const data = await dataPromise;
-
-  console.log(data);
 
   const totalContributions =
     data.user.contributionsCollection.contributionCalendar.totalContributions;
