@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer type="module" src="main.js"></script>
+    <title>Portfolio</title>
+  </head>
+  <body class="body__layout">
+    <div class="blackout"></div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__link" data-link="about">
+          <ion-icon name="person" class="nav__link-icon"></ion-icon>
+        </li>
+        <li class="nav__link" data-link="projects">
+          <ion-icon name="file-tray-full" class="nav__link-icon"></ion-icon>
+        </li>
+        <li class="nav__link" data-link="contact">
+          <ion-icon name="mail" class="nav__link-icon"></ion-icon>
+        </li>
+      </ul>
+    </nav>
+    <main class="main">
+      <div class="nav__indicator">
+        <div class="nav__indicator-timer">
+          <div class="timer__circular-progress"></div>
+          <div class="timer__cross"></div>
+        </div>
+        <svg
+          class="nav__indicator-svg"
+          viewBox="0 0 198 640"
+          version="1.1"
+          style="
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            stroke-linejoin: round;
+            stroke-miterlimit: 2;
+          "
+        >
+          <path
+            class="nav__indicator-svg--path"
+            d="M172.718,614.83c-0.338,-178.625 -147.718,-197.158 -147.718,-297.894c-0,-100.735 147.586,-119.769 147.718,-291.936"
+          />
+          <rect
+            class="nav__indicator-svg--rect"
+            x="170.508"
+            y="34.715"
+            width="100.345"
+            height="589.83"
+          />
+        </svg>
+      </div>
+      <button class="btn__mobile-navigation">
+        <ion-icon name="menu" class="btn__mobile-navigation--icon"></ion-icon>
+      </button>
+      <button class="btn__github">
+        <ion-icon name="logo-github" class="btn__github-icon"></ion-icon>
+      </button>
+
+      <section class="main__top">
+        <div class="main__top-container">
+          <h1 class="main__top-greet">
+            I'm <span class="span-1">Bruno,</span>
+            <span class="span-2"> a junior front-end developer.</span>
+          </h1>
+          <p class="main__top-copy">
+            &copy; 2022 Bruno Xavier. All Rights Reserved.
+          </p>
+        </div>
+        <button class="btn__theme">
+          <div class="btn__light active">
+            <ion-icon name="sunny"></ion-icon>
+          </div>
+          <div class="btn__dark">
+            <ion-icon name="moon"></ion-icon>
+          </div>
+        </button>
+      </section>
+
+      <section class="main__mid">
+        <div class="mid__container">
+          <div class="mid__modal"></div>
+          <div class="loader loader__top">
+            <div class="loader__square"></div>
+            <div class="loader__bubble">
+              <ion-icon name="planet"></ion-icon>
+            </div>
+            <div class="loader__bubble">
+              <ion-icon name="planet"></ion-icon>
+            </div>
+            <div class="loader__bubble">
+              <ion-icon name="planet"></ion-icon>
+            </div>
+            <div class="loader__bubble">
+              <ion-icon name="planet"></ion-icon>
+            </div>
+            <div class="loader__top-icon">
+              <div class="icon__outer-box">
+                <div class="icon__inner-box"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page__container page__about" data-page="about">
+            <div class="about__accordion">
+              <div class="accordion__leaf" data-leaf="about">
+                <div class="leaf__absolute-logo">
+                  <ion-icon name="person"></ion-icon>
+                </div>
+                <div class="accordion__leaf-container">
+                  <div class="accordion__leaf-logo">
+                    <ion-icon name="person"></ion-icon>
+                  </div>
+                  <h2 class="accordion__leaf-title">About</h2>
+                  <p class="accordion__leaf-text">
+                    <span>
+                      I'm Bruno Xavier, a junior front-end developer looking for
+                      it's first entry level job. I'm comfortable using
+                      HTML/CSS, Sass and JavaScript to code ideas from scratch
+                      bringing them to life. Would love to learn more about the
+                      craft of UX/UI Design when the proper time arises. On my
+                      free time you'll find me reading, cooking, doing origami
+                      or practising calisthenics.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="accordion__leaf" data-leaf="current">
+                <div class="leaf__absolute-logo">
+                  <ion-icon name="rocket"></ion-icon>
+                </div>
+                <div class="accordion__leaf-container">
+                  <div class="accordion__leaf-logo">
+                    <ion-icon name="rocket"></ion-icon>
+                  </div>
+                  <h2 class="accordion__leaf-title">Currently</h2>
+                  <p class="accordion__leaf-text">
+                    <span>
+                      Currently working on a personal markdown-based project
+                      using the MVC architecture and learning TypeScript.</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="accordion__leaf" data-leaf="next">
+                <div class="leaf__absolute-logo">
+                  <ion-icon name="compass"></ion-icon>
+                </div>
+                <div class="accordion__leaf-container">
+                  <div class="accordion__leaf-logo">
+                    <ion-icon name="compass"></ion-icon>
+                  </div>
+                  <h2 class="accordion__leaf-title">Next</h2>
+                  <p class="accordion__leaf-text">
+                    <span> Interested in learning the React framework.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page__container page__projects" data-page="projects">
+            <div class="carousel__container">
+              <div class="carousel__window">
+                <div class="slider slider--hover"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page__container page__contact" data-page="contact">
+            <div class="contact__section" data-contact="codepen">
+              <div class="contact__square">
+                <ion-icon name="logo-codepen"></ion-icon>
+              </div>
+              <a
+                class="contact__holder"
+                href="https://codepen.io/SleepyBluee"
+                target="_blank"
+              >
+                <div class="contact__holder-text">Visit!</div>
+                <div class="contact__holder-icon">
+                  <ion-icon name="link"></ion-icon>
+                </div>
+              </a>
+            </div>
+            <div class="contact__section" data-contact="github">
+              <div class="contact__square">
+                <ion-icon name="logo-github"></ion-icon>
+              </div>
+              <a
+                class="contact__holder"
+                href="https://github.com/Sleepyblue"
+                target="_blank"
+              >
+                <div class="contact__holder-text">Visit!</div>
+                <div class="contact__holder-icon">
+                  <ion-icon name="link"></ion-icon>
+                </div>
+              </a>
+            </div>
+            <div class="contact__section" data-contact="mail">
+              <div class="contact__square">
+                <ion-icon name="mail"></ion-icon>
+              </div>
+              <div class="contact__holder contact__holder-clip">
+                <div class="contact__holder-text">Copy!</div>
+                <div class="contact__holder-icon">
+                  <ion-icon name="copy"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loader loader__bot">
+            <div class="loader__square"></div>
+            <div class="loader__bubble">
+              <ion-icon name="planet"></ion-icon>
+            </div>
+            <div class="loader__bubble">
+              <ion-icon name="planet"></ion-icon>
+            </div>
+            <div class="loader__bubble">
+              <ion-icon name="planet"></ion-icon>
+            </div>
+            <div class="loader__bubble">
+              <ion-icon name="planet"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__bot">
+        <div class="btn__carousel">
+          <button class="btn larr" id="larr">
+            <div class="btn__container">
+              <ion-icon name="caret-back-circle"></ion-icon>
+            </div>
+          </button>
+          <button class="btn rarr" id="rarr" aria-label="Move to next slide">
+            <div class="btn__container">
+              <ion-icon name="caret-forward-circle"></ion-icon>
+            </div>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <aside class="aside">
+      <div class="aside__container">
+        <button class="btn__aside-close">
+          <ion-icon class="btn__aside-close--icon" name="caret-up"></ion-icon>
+        </button>
+
+        <div class="aside__goo-container">
+          <ion-icon name="logo-github" class="goo__icon goo__github"></ion-icon>
+          <ion-icon name="caret-up" class="goo__icon goo__codepen"></ion-icon>
+          <div class="aside__goo-box"></div>
+          <svg
+            class="aside__heatmap-goo"
+            viewBox="0 0 142 35"
+            style="
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              stroke-linejoin: round;
+              stroke-miterlimit: 2;
+            "
+          >
+            <g transform="matrix(1,0,0,1,-6314.54,-3427.15)">
+              <g transform="matrix(0.963101,0,0,1,5700.69,3392.66)">
+                <g
+                  transform="matrix(-5.31001e-17,-0.286679,0.356322,-3.3758e-17,635.881,70.3223)"
+                >
+                  <path
+                    class="aside__goo aside__heatmap-goo--path"
+                    d="M4.167,4.167C4.443,129.089 125,142.05 125,212.5C125,282.95 4.275,296.261 4.167,416.667"
+                  />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="aside__welcome">
+          <h1 class="aside__welcome-title">
+            Hi there! I'm <br /><span>Bruno</span>,
+          </h1>
+          <p class="aside__welcome-text">a junior front-end developer.</p>
+        </div>
+        <div class="aside__heatmap">
+          <div class="heat__month">
+            <h3 class="heat__month-header"></h3>
+          </div>
+          <div class="heatmap__container"></div>
+          <div class="heat__contributions">
+            <h3 class="heat__contributions-header"></h3>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

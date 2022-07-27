@@ -282,6 +282,9 @@ const moveGoo = async function (e, section = undefined, fix = undefined) {
   if (window.innerWidth < 600 && fix !== undefined)
     svgHeight = svg.getBoundingClientRect().height + fix;
 
+  console.log(svgHeight);
+  console.log(svgPosition);
+
   let gooPosition = `${svgPosition + svgHeight / 2}px`;
 
   if (window.innerWidth > 700 || window.innerHeight < 601) {

@@ -1,3 +1,6 @@
 # Local Netlify folder
 .netlify
 node_modules
+css/style.comp.css
+css/style.comp.css.map
+css/style.prefix.css
