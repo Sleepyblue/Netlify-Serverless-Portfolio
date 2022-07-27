@@ -1,8 +1,9 @@
 {
-  "name": "portfolio-final-layout",
-  "version": "3.0.0",
-  "description": "Building the final iteration of my personal portfolio",
+  "name": "netlify-serverless-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio with continuous deployment on netlify",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "watch:sass": "sass sass/main.scss css/style.css --watch",
     "devserver": "live-server",
@@ -22,8 +23,6 @@
     "postcss-cli": "^4.1.1"
   },
   "dependencies": {
-    "axios": "^0.27.2",
     "node-fetch": "^3.2.8"
-  },
-  "type": "module"
+  }
 }
