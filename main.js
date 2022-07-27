@@ -971,60 +971,13 @@ btnTheme.addEventListener('click', (e) => {
   themeToggle();
 });
 
-// const token = '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';
-
-const getContributions = async function () {
-  try {
-    // const url = 'https://api.github.com/graphql';
-    // const API_TOKEN = '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';
-    //   const headers = {
-    //     Authorization: `bearer ${API_TOKEN}`,
-    //   };
-    //   const body = {
-    //     query: `query {
-    //         user(login: "sleepyblue") {
-    //           name
-    //           contributionsCollection {
-    //             contributionCalendar {
-    //               colors
-    //               totalContributions
-    //               weeks {
-    //                 contributionDays {
-    //                   color
-    //                   contributionCount
-    //                   contributionLevel
-    //                   date
-    //                   weekday
-    //                 }
-    //                 firstDay
-    //               }
-    //             }
-    //           }
-    //         }
-    //       }`,
-    //   };
-    //   const res = await fetch(url, {
-    //     method: 'POST',
-    //     body: JSON.stringify(body),
-    //     headers: headers,
-    //   });
-    // const { data } = await res.json();
-    // console.log(data);
-    // return data;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 const contributionGraph = async function (e) {
   const url = '/.netlify/functions/index';
-  // const client = new ApolloClient({
-  //   uri: '/.netlify/functions/index',
-  // });
   const dataStream = await fetch(url);
-  console.log(dataStream);
+  const dataPromise = dataStream.json();
+  const data = await dataPromise;
 
-  // const data = await getContributions();
+  console.log(data);
 
   const totalContributions =
     data.user.contributionsCollection.contributionCalendar.totalContributions;
