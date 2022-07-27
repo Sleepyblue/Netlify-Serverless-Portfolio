@@ -929,6 +929,7 @@ const openModal = function (e) {
   createModal(e);
   modal.classList.add('open');
   modalState = true;
+  console.log('called');
 };
 
 const closeModal = function () {
@@ -1158,25 +1159,4 @@ const copyTextToClipBoard = function (text) {
 
 copyButton.addEventListener('click', function (e) {
   copyTextToClipBoard(mailText);
-});
-
-// slider.addEventListener('touchmove', function (e) {
-//   e.preventDefault();
-//   console.log(e);
-// });
-
-let swipe = { start: 0, end: 0 };
-
-slider.addEventListener('touchstart', function (e) {
-  e.preventDefault();
-  swipe.start = e.changedTouches[0].clientY;
-  // console.log(swipe.start);
-  moveCarousel(e, true);
-});
-
-slider.addEventListener('touchend', function (e) {
-  e.preventDefault();
-  swipe.end = e.changedTouches[0].clientY;
-  // console.log(swipe.end);
-  moveCarousel(e, true);
 });
