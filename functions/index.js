@@ -1,6 +1,6 @@
 // import fetch from 'node-fetch';
 
-const handler = async (event, context) => {
+exports.handler = async (event, context) => {
   try {
     const url = 'https://api.github.com/graphql';
     const API_TOKEN = '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';
@@ -47,5 +47,3 @@ const handler = async (event, context) => {
     return { statusCode: 422, body: err.stack };
   }
 };
-
-module.exports = { handler };
