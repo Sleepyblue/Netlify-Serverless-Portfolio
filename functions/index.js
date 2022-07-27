@@ -3,10 +3,10 @@ import fetch from 'node-fetch';
 exports.handler = async (event, context) => {
   try {
     const url = 'https://api.github.com/graphql';
-    const API_TOKEN = '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';
+    const TOKEN = process.env.API_TOKEN;
 
     const headers = {
-      Authorization: `bearer ${API_TOKEN}`,
+      Authorization: `bearer ${TOKEN}`,
     };
     const body = {
       query: `query {
