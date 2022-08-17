@@ -569,8 +569,8 @@ const styleSlides = function (shownSlides, slideHeight, slideGap) {
 };
 
 const mobileFirstChildMargin = function (slideGap) {
-  if (window.innerWidth > 700) return;
-  return (slider.clientHeight * slideGap) / 100;
+  if (innerWidth >= 701 || window.innerHeight <= 600) return;
+  return (slider.clientHeight * (slideGap + 0.3)) / 100;
 };
 
 let translate = dynamicSlidesVariables()[0];
@@ -587,42 +587,70 @@ const fixAccumulator = function () {
   fixedAccumulator = Number(translateAccumulator.toFixed(2));
 };
 
-const moveCarousel = function (e, mobile) {
+const swipeCarouselVertical = function (e) {
+  if (fixedAccumulator === 0 && swipe.vertical.start < swipe.vertical.end) {
+    state.translation = fixedAccumulator;
+    localStorage.setItem('state', JSON.stringify(state));
+    return;
+  } else if (
+    fixedAccumulator === Number(maxTranslate.toFixed(2)) &&
+    swipe.vertical.start > swipe.vertical.end
+  ) {
+    state.translation = fixedAccumulator;
+    localStorage.setItem('state', JSON.stringify(state));
+    return;
+  }
+
+  if (swipe.vertical.start < swipe.vertical.end) {
+    slider.style.transform = `translateY(${translateAccumulator}%)`;
+    translateAccumulator += translate;
+    fixAccumulator();
+  } else if (swipe.vertical.start > swipe.vertical.end) {
+    slider.style.transform = `translateY(${translateAccumulator}%)`;
+    translateAccumulator -= translate;
+    fixAccumulator();
+  }
+
+  slider.style.transform = `translateY(${translateAccumulator}%)`;
+  state.translation = fixedAccumulator;
+
+  localStorage.setItem('state', JSON.stringify(state));
+  console.log('swipeCarouselVertical called!');
+};
+
+const swipeCarouselHorizontal = function (e) {
+  if (fixedAccumulator === 0 && swipe.horizontal.start < swipe.horizontal.end) {
+    state.translation = fixedAccumulator;
+    localStorage.setItem('state', JSON.stringify(state));
+    return;
+  } else if (
+    fixedAccumulator === Number(maxTranslate.toFixed(2)) &&
+    swipe.horizontal.start > swipe.horizontal.end
+  ) {
+    state.translation = fixedAccumulator;
+    localStorage.setItem('state', JSON.stringify(state));
+    return;
+  }
+
+  if (swipe.horizontal.start < swipe.horizontal.end) {
+    slider.style.transform = `translateX(${translateAccumulator}%)`;
+    translateAccumulator += translate;
+    fixAccumulator();
+  } else if (swipe.horizontal.start > swipe.horizontal.end) {
+    slider.style.transform = `translateX(${translateAccumulator}%)`;
+    translateAccumulator -= translate;
+    fixAccumulator();
+  }
+
+  slider.style.transform = `translateX(${translateAccumulator}%)`;
+  state.translation = fixedAccumulator;
+
+  localStorage.setItem('state', JSON.stringify(state));
+  console.log('swipeCarouselHorizontal called!');
+};
+
+const moveCarousel = function (e) {
   fixAccumulator();
-
-  //////////////// TESTING
-
-  // if (mobile) {
-  //   if (fixedAccumulator === 0 && swipe.start < swipe.end) {
-  //     state.translation = fixedAccumulator;
-  //     localStorage.setItem('state', JSON.stringify(state));
-  //     return;
-  //   } else if (
-  //     fixedAccumulator === Number(maxTranslate.toFixed(2)) &&
-  //     swipe.start > swipe.end
-  //   ) {
-  //     state.translation = fixedAccumulator;
-  //     localStorage.setItem('state', JSON.stringify(state));
-  //     return;
-  //   }
-  // }
-
-  // if (swipe.start < swipe.end) {
-  //   slider.style.transform = `translate${
-  //     window.innerWidth >= 701 || window.innerHeight <= 600 ? 'X' : 'Y'
-  //   }(${translateAccumulator}%)`;
-  //   translateAccumulator += translate;
-  //   fixAccumulator();
-  //   return;
-  // } else if (swipe.start > swipe.end) {
-  //   slider.style.transform = `translate${
-  //     window.innerWidth >= 701 || window.innerHeight <= 600 ? 'X' : 'Y'
-  //   }(${translateAccumulator}% )`;
-  //   translateAccumulator -= translate;
-  //   fixAccumulator();
-  //   return;
-  // }
-  ////////////////////////
 
   if (fixedAccumulator === 0 && e.target.id === 'larr') {
     state.translation = fixedAccumulator;
@@ -1156,4 +1184,22 @@ const copyTextToClipBoard = function (text) {
 
 copyButton.addEventListener('click', function (e) {
   copyTextToClipBoard(mailText);
+});
+
+let swipe = {
+  vertical: { start: 0, end: 0 },
+  horizontal: { start: 0, end: 0 },
+};
+
+slider.addEventListener('touchstart', function (e) {
+  swipe.vertical.start = e.changedTouches[0].clientY;
+  swipe.horizontal.start = e.changedTouches[0].clientX;
+});
+
+slider.addEventListener('touchend', function (e) {
+  swipe.vertical.end = e.changedTouches[0].clientY;
+  swipe.horizontal.end = e.changedTouches[0].clientX;
+  if (window.innerWidth >= 701 || window.innerHeight <= 600)
+    swipeCarouselHorizontal(e);
+  else swipeCarouselVertical(e);
 });

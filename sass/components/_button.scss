@@ -255,14 +255,8 @@
   }
 
   @include respond(mobile) {
+    display: none;
     gap: initial;
-  }
-
-  @include respond(mobile-land) {
-    gap: initial;
-  }
-
-  @include respond(mobile) {
     width: 94%;
     height: 100%;
     place-items: flex-start;
@@ -271,6 +265,8 @@
   }
 
   @include respond(mobile-land) {
+    display: none;
+    gap: initial;
     position: absolute;
     width: 94%;
     height: 60%;

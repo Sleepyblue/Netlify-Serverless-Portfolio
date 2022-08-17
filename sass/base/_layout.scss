@@ -142,11 +142,11 @@
     background-color: transparent;
 
     @include respond(mobile) {
-      max-height: 75%;
+      max-height: 80%;
     }
 
     @include respond(mobile-land) {
-      max-height: calc((100 * var(--vh)) * 0.68);
+      max-height: calc((100 * var(--vh)) * 0.75);
     }
   }
 
@@ -177,7 +177,7 @@
   &__container {
     position: relative;
     width: 95%;
-    max-height: calc((100 * var(--vh)) * 0.7);
+    max-height: calc((100 * var(--vh)) * 0.75);
     height: 100%;
     display: flex;
     border-radius: 6.5rem;
@@ -203,7 +203,7 @@
     }
 
     @include respond(mobile-land) {
-      max-height: calc((100 * var(--vh)) * 0.6);
+      max-height: calc((100 * var(--vh)) * 0.75k);
       background-color: rgba(var(--bg-rgb), 1);
       backdrop-filter: none;
     }
@@ -220,7 +220,6 @@
       rgba(var(--acc2-rgb), 0.5),
       rgba(var(--acc2-rgb), 0.5)
     );
-    // backdrop-filter: blur(10px);
     z-index: 3;
     pointer-events: all;
   }
