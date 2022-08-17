@@ -615,7 +615,6 @@ const swipeCarouselVertical = function (e) {
   state.translation = fixedAccumulator;
 
   localStorage.setItem('state', JSON.stringify(state));
-  console.log('swipeCarouselVertical called!');
 };
 
 const swipeCarouselHorizontal = function (e) {
@@ -646,7 +645,6 @@ const swipeCarouselHorizontal = function (e) {
   state.translation = fixedAccumulator;
 
   localStorage.setItem('state', JSON.stringify(state));
-  console.log('swipeCarouselHorizontal called!');
 };
 
 const moveCarousel = function (e) {
