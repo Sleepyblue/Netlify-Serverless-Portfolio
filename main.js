@@ -1189,15 +1189,23 @@ let swipe = {
   horizontal: { start: 0, end: 0 },
 };
 
-slider.addEventListener('touchstart', function (e) {
-  swipe.vertical.start = e.changedTouches[0].clientY;
-  swipe.horizontal.start = e.changedTouches[0].clientX;
-});
+slider.addEventListener(
+  'touchstart',
+  function (e) {
+    swipe.vertical.start = e.changedTouches[0].clientY;
+    swipe.horizontal.start = e.changedTouches[0].clientX;
+  },
+  { passive: true }
+);
 
-slider.addEventListener('touchend', function (e) {
-  swipe.vertical.end = e.changedTouches[0].clientY;
-  swipe.horizontal.end = e.changedTouches[0].clientX;
-  if (window.innerWidth >= 701 || window.innerHeight <= 600)
-    swipeCarouselHorizontal(e);
-  else swipeCarouselVertical(e);
-});
+slider.addEventListener(
+  'touchend',
+  function (e) {
+    swipe.vertical.end = e.changedTouches[0].clientY;
+    swipe.horizontal.end = e.changedTouches[0].clientX;
+    if (window.innerWidth >= 701 || window.innerHeight <= 600)
+      swipeCarouselHorizontal(e);
+    else swipeCarouselVertical(e);
+  },
+  { passive: true }
+);
