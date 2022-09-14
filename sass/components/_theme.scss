@@ -167,18 +167,18 @@
   }
 
   &__light {
-    background-color: #fdf6f0;
+    background-color: #f6f6f6;
 
     & ion-icon {
-      fill: #ffaf59;
+      fill: #5d6081;
     }
   }
 
   &__dark {
-    background-color: #353d4f;
+    background-color: #2e292d;
 
     & ion-icon {
-      fill: #b79251;
+      fill: #ecc39c;
     }
   }
 }

@@ -422,7 +422,7 @@
 
   &__icon ion-icon,
   &__link ion-icon {
-    fill: var(--primary);
+    fill: var(--acc1);
   }
 
   &:hover {
@@ -433,7 +433,7 @@
     }
 
     .slide__arrow-absolute ion-icon {
-      fill: rgba(var(--primary-rgb), 0.8);
+      fill: rgba(var(--acc1-rgb), 0.8);
       animation: arrowUp 0.4s infinite alternate;
 
       @include respond(tab-land) {
@@ -559,4 +559,20 @@
   .slide__link:hover svg {
     fill: var(--acc2);
   }
+}
+
+.body__layout.dark-theme .slide:hover {
+  background-color: var(--acc1);
+}
+
+.body__layout.dark-theme .slide__content {
+  color: var(--primary);
+}
+
+.body__layout.dark-theme .slide__link:hover svg {
+  fill: var(--acc1);
+}
+
+.body__layout.dark-theme .slide.open {
+  border: 6px solid var(--acc1);
 }

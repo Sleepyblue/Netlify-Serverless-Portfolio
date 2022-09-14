@@ -1,13 +1,13 @@
 // Color control HUB
 :root {
-  --primary: #fd886e;
-  --primary-rgb: 253, 136, 110;
-  --acc1: #f8e2cf;
-  --acc1-rgb: 248, 226, 207;
-  --acc2: #ffaf59;
-  --acc2-rgb: 255, 175, 89;
-  --bg: #fdf6f0;
-  --bg-rgb: 253, 246, 240;
+  --primary: #5d6081;
+  --primary-rgb: 93, 96, 129;
+  --acc1: #ecc39c;
+  --acc1-rgb: 236, 195, 156;
+  --acc2: #ff6f62;
+  --acc2-rgb: 255, 111, 98;
+  --bg: #f6f6f6;
+  --bg-rgb: 246, 246, 246;
   --shadow: #22233a;
   --shadow-rgb: 34, 35, 58;
   --heat1: #eae374;
@@ -20,14 +20,14 @@
 }
 
 .dark-theme {
-  --primary: #9ca0a9;
-  --primary-rgb: 156, 160, 169;
-  --acc1: #e4e2cc;
-  --acc1-rgb: 228, 226, 204;
-  --acc2: #b79251;
-  --acc2-rgb: 183, 146, 81;
-  --bg: #353d4f;
-  --bg-rgb: 53, 61, 79;
+  --primary: #ecc39c;
+  --primary-rgb: 236, 195, 156;
+  --acc1: #ff6f62;
+  --acc1-rgb: 255, 111, 98;
+  --acc2: #2e292d;
+  --acc2-rgb: 46, 41, 45;
+  --bg: #2e292d;
+  --bg-rgb: 46, 41, 45;
   --shadow: #11111b;
   --shadow-rgb: 17, 17, 27;
   --heat1: #b3e5fc;

@@ -301,7 +301,7 @@
     position: absolute;
     width: 60%;
     height: 60%;
-    color: var(--acc2);
+    color: var(--primary);
     z-index: 1;
     transition: all 0.6s cubic-bezier(0.04, 1.44, 0.83, 1.17);
     pointer-events: none;
@@ -364,7 +364,7 @@
     position: absolute;
     width: 60%;
     height: 60%;
-    fill: var(--acc2);
+    fill: var(--primary);
     z-index: 1;
     transition: all 0.6s cubic-bezier(0.04, 1.44, 0.83, 1.17);
     pointer-events: none;

@@ -270,3 +270,15 @@
     }
   }
 }
+
+.body__layout.dark-theme .nav__link-icon {
+  fill: var(--bg);
+}
+
+.body__layout.dark-theme .nav__link.select {
+  background-color: var(--bg);
+
+  & .nav__link-icon {
+    fill: var(--acc1);
+  }
+}

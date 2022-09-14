@@ -50,6 +50,20 @@
   }
 }
 
+@keyframes blinkDark {
+  0% {
+    background-color: transparent;
+    transform: scale(0.8);
+    box-shadow: none;
+  }
+
+  100% {
+    background-color: var(--acc1);
+    transform: scale(1);
+    box-shadow: 2px 2px 6px 0px rgba(var(--shadow-rgb), 0.75);
+  }
+}
+
 @keyframes jiggle {
   0% {
     transform: translateY(0);

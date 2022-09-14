@@ -229,7 +229,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 10rem;
+    // height: 10rem;
     padding: 0rem 18.5rem;
     font-size: 2rem;
     font-weight: 400;
@@ -326,14 +326,6 @@
   }
 }
 
-.body__layout.dark-theme {
-  .accordion__leaf.active {
-    .accordion__leaf-title {
-      color: var(--acc1);
-    }
-  }
-
-  .accordion__leaf-text {
-    color: var(--acc1);
-  }
+.body__layout.dark-theme .leaf__absolute-logo ion-icon {
+  color: rgba(var(--primary-rgb), 0.2);
 }

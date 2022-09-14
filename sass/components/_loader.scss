@@ -293,3 +293,15 @@
     }
   }
 }
+
+///////////////////////////////////////////////////////////
+// Modal Utilities
+///////////////////////////////////////////////////////////
+
+.body__layout.dark-theme .icon__outer-box {
+  border: 6px solid var(--acc1);
+}
+
+.body__layout.dark-theme .icon__inner-box {
+  animation: blinkDark 0.4s infinite cubic-bezier(0.6, 1.2, 1, 0.21);
+}

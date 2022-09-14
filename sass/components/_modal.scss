@@ -156,7 +156,7 @@
       width: 100%;
       height: 100%;
       transition: all 0.3s cubic-bezier(0.54, 0.03, 0, 1.66);
-      fill: var(--acc1);
+      fill: var(--primary);
     }
   }
 
@@ -173,13 +173,37 @@
       width: 100%;
       height: 100%;
       transition: all 0.3s cubic-bezier(0.54, 0.03, 0, 1.66);
-      fill: var(--acc1);
+      fill: var(--primary);
     }
   }
 
   &__link:hover {
     & ion-icon {
-      fill: var(--primary);
+      fill: var(--acc1);
     }
   }
+}
+
+///////////////////////////////////////////////////////////
+// Modal Utilities
+///////////////////////////////////////////////////////////
+
+.body__layout.dark-theme .modal__icon ion-icon {
+  fill: var(--bg);
+}
+
+.body__layout.dark-theme .modal__link ion-icon {
+  fill: var(--bg);
+}
+
+.body__layout.dark-theme .modal__link:hover ion-icon {
+  fill: var(--acc1);
+}
+
+.body__layout.dark-theme .mid__modal {
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--acc1-rgb), 0.5),
+    rgba(var(--acc1-rgb), 0.5)
+  );
 }
