@@ -161,6 +161,14 @@
       overflow: hidden;
     }
 
+    &[data-cover='Markdown Recipe Application (Ongoing)'] {
+      background-image: url('../img/markdown.webp');
+    }
+
+    &[data-cover='Portfolio'] {
+      background-image: url('../img/portfolio.webp');
+    }
+
     &[data-cover='Responsive Carousel'] {
       background-image: url('../img/responsive-carousel.webp');
     }

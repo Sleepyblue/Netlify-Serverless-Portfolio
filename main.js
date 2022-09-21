@@ -53,6 +53,24 @@ let state = {};
 
 const slideData = [
   {
+    title: `Markdown Recipe Application (Ongoing)`,
+    description: `A recipe application that tries to tone-down recipe management to the absolute essential`,
+    languageOne: `logo-html5`,
+    languageTwo: `logo-sass`,
+    languageThree: `logo-javascript`,
+    codeLink: `https://markdown-recipe-app.netlify.app`,
+    gitLink: `https://github.com/Sleepyblue/markdown-recipe-app`,
+  },
+  {
+    title: `Portfolio`,
+    description: `Source code from this interactive and rather unorthodox portfolio`,
+    languageOne: `logo-html5`,
+    languageTwo: `logo-sass`,
+    languageThree: `logo-javascript`,
+    codeLink: `https://bruno-xavier.netlify.app`,
+    gitLink: `https://github.com/Sleepyblue/Netlify-Serverless-Portfolio`,
+  },
+  {
     title: `Responsive Carousel`,
     description: `A simple carousel asset that's both responsive and adaptive for desktop, tablet and mobile`,
     languageOne: `logo-html5`,
