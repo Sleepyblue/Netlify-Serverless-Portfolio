@@ -12,6 +12,7 @@ An interactive and rather unorthodox portfolio composed of the following complem
 - Github Heatmap > [Github](https://github.com/Sleepyblue/Heatmap-Github-GraphQL-API) | [Codepen](https://codepen.io/SleepyBluee/pen/LYdGWOq)
 - Page Loader > [Github](https://github.com/Sleepyblue/Page-Loader) | [Codepen](https://codepen.io/SleepyBluee/pen/xxWZLVj)
 - Modal Window > [Github](https://github.com/Sleepyblue/Modal-Window) | [Codepen](https://codepen.io/SleepyBluee/pen/PoRZKpo)
+
 The main objectives for this project were for it to be as interactive as possible, to avoid scrolling and to have a natural feeling for the visitor. It is both adaptive and responsive for the following layout ranges:
 - Desktop (up to Full-HD)
 - Laptop
@@ -24,7 +25,7 @@ ___
 
 ## Currently
 
-Updated as development progresses
+>*Updated as development progresses*
 
 <br>
 
