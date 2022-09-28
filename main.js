@@ -20,12 +20,24 @@ const btnGithub = document.querySelector('.btn__github');
 const btnMobileNavigation = document.querySelector('.btn__mobile-navigation');
 const navIndicator = document.querySelector('.nav__indicator');
 const navIndicatorTimer = document.querySelector('.nav__indicator-timer');
-let timercircularProgress = document.querySelector('.timer__circular-progress');
 const nav = document.querySelector('.nav');
 const navLinks = document.querySelectorAll('.nav__link');
 const aside = document.querySelector('.aside');
 const asideBtnClose = document.querySelector('.btn__aside-close');
 const blackout = document.querySelector('.blackout');
+const asideGoo = document.querySelector('.aside__goo');
+const asideHeatGoo = document.querySelector('.aside__heatmap-goo');
+const asideGooContainer = document.querySelector('.aside__goo-container');
+const asideContainer = document.querySelector('.aside__container');
+const asideGooBox = document.querySelector('.aside__goo-box');
+const githubLogo = document.querySelector('.goo__github');
+const codepenLogo = document.querySelector('.goo__codepen');
+const copyButton = document.querySelector('.contact__holder-clip');
+const copyButtonPseudo = window.getComputedStyle(copyButton, '::before');
+const mailText = copyButtonPseudo.content;
+const contactSquares = document.querySelectorAll('.contact__square');
+const aboutAccordion = document.querySelector('.about__accordion');
+const btnTheme = document.querySelector('.btn__theme');
 
 // ~
 const contactSection = document.querySelectorAll('.contact__section');
@@ -38,6 +50,7 @@ const larr = document.querySelector('.larr');
 const rarr = document.querySelector('.rarr');
 const modal = document.querySelector('.mid__modal');
 const slider = document.querySelector('.slider');
+let timercircularProgress = document.querySelector('.timer__circular-progress');
 let modalState = false;
 let menuState = false;
 let counter = 0;
@@ -48,7 +61,12 @@ let slideGap;
 let shownSlides;
 let translateAccumulator;
 let fixedAccumulator;
-
+let slideState = false;
+let previousSlide;
+let swipe = {
+  vertical: { start: 0, end: 0 },
+  horizontal: { start: 0, end: 0 },
+};
 let state = {};
 
 const slideData = [
@@ -927,7 +945,6 @@ const hideTimer = function () {
 };
 
 const btns = document.querySelectorAll('.btn');
-
 const flexSlideFirstChild = document.querySelector('.slide:first-child');
 
 const resetStylings = function () {
@@ -945,9 +962,6 @@ const resetStylings = function () {
     slide.classList.remove('project__slide--click');
   });
 };
-
-let slideState = false;
-let previousSlide;
 
 const openSlide = async function (e, slide) {
   previousSlide = slide;
@@ -986,8 +1000,6 @@ modal.addEventListener('click', function (e) {
   if (e.target != modalBtn) return;
   closeModal();
 });
-
-const btnTheme = document.querySelector('.btn__theme');
 
 const btnThemeIconToggle = function (e) {
   const btnLight = e.target.querySelector('.btn__light');
@@ -1093,14 +1105,6 @@ const graphColouring = async function () {
 
 graphColouring();
 
-const asideGoo = document.querySelector('.aside__goo');
-const asideHeatGoo = document.querySelector('.aside__heatmap-goo');
-const asideGooContainer = document.querySelector('.aside__goo-container');
-const asideContainer = document.querySelector('.aside__container');
-const asideGooBox = document.querySelector('.aside__goo-box');
-const githubLogo = document.querySelector('.goo__github');
-const codepenLogo = document.querySelector('.goo__codepen');
-
 asideGoo.addEventListener('click', (e) => {
   e.preventDefault();
   e.stopPropagation();
@@ -1152,8 +1156,6 @@ asideGoo.addEventListener('click', (e) => {
   });
 });
 
-const aboutAccordion = document.querySelector('.about__accordion');
-
 aboutAccordion.addEventListener('click', function (e) {
   accordionHandler(e);
 });
@@ -1168,8 +1170,6 @@ const accordionHandler = function (e) {
   e.target.classList.add('active');
   accordionStateControl(e.target);
 };
-
-const contactSquares = document.querySelectorAll('.contact__square');
 
 pageContact.addEventListener('click', function (e) {
   if (!e.target.classList.contains('contact__square')) return;
@@ -1189,10 +1189,6 @@ pageContact.addEventListener('click', function (e) {
   contactsStateControl(e.target);
 });
 
-const copyButton = document.querySelector('.contact__holder-clip');
-const copyButtonPseudo = window.getComputedStyle(copyButton, '::before');
-const mailText = copyButtonPseudo.content;
-
 const copyTextToClipBoard = function (text) {
   let slicedText = text.slice(1, text.length - 1);
   navigator.clipboard.writeText(slicedText);
@@ -1201,11 +1197,6 @@ const copyTextToClipBoard = function (text) {
 copyButton.addEventListener('click', function (e) {
   copyTextToClipBoard(mailText);
 });
-
-let swipe = {
-  vertical: { start: 0, end: 0 },
-  horizontal: { start: 0, end: 0 },
-};
 
 slider.addEventListener(
   'touchstart',
